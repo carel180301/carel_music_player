@@ -1,0 +1,19 @@
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    audio{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    h2{
+        text-align: center;
+    }
+}
