@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carel Music Player</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+
+     <!-- Bootstrap Font Icon CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
 </head>
 <body>
-    <img src="nct dream - to my first.png" alt="cover image">
+    <img src="bts - magic shop.png" alt="cover image">
 
-    <h2>NCT Dream - To My First</h2>
+    <br>
+    <h2>BTS - Magic Shop</h2>
 
-    <audio controls>
-        <source src="NCT DREAM - 마지막 인사 (To My First).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <div class="icon-container">
+        <i id="logo_play" class="bi bi-caret-right-fill" onclick="playMusic()"></i>
+    </div>
+
+    <audio id="audio" src="BTS - Magic Shop.mp3" preload="auto"></audio>
+
+    <script>
+        function playMusic(){
+            var audio = document.getElementById('audio'); // Get the audio element
+            if (audio.paused) {
+                audio.play(); // Play audio if it's paused
+                document.getElementById('logo_play').classList.remove('bi-caret-right-fill');
+                document.getElementById('logo_play').classList.add('bi-pause-fill'); // Change icon to pause when playing
+            } else {
+                audio.pause(); // Pause audio if it's already playing
+                document.getElementById('logo_play').classList.remove('bi-pause-fill');
+                document.getElementById('logo_play').classList.add('bi-caret-right-fill'); // Change icon back to play
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
