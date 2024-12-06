@@ -17,13 +17,24 @@
     <img src="bts - magic shop.png" alt="cover image">
 
     <br>
+    
     <h2>BTS - Magic Shop</h2>
 
+    <div id="div_seekbar">
+        <!-- Seek bar -->
+        <input type="range" id="seek-bar" min="0" max="100" value="0" step="0.1">
+
+        <!-- Timestamp -->
+        <div id="timestamp">0:00 / 0:00</div>
+    </div>
+
+    <br>
     <div class="icon-container">
         <i id="logo_play" class="bi bi-caret-right-fill" onclick="playMusic()"></i>
     </div>
 
     <audio id="audio" src="BTS - Magic Shop.mp3" preload="auto"></audio>
+    
 
     <script>
         function playMusic(){
@@ -38,6 +49,51 @@
                 document.getElementById('logo_play').classList.add('bi-caret-right-fill'); // Change icon back to play
             }
         }
+
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        const audio = document.getElementById('audio');
+        const seekBar = document.getElementById('seek-bar');
+        const timestamp = document.getElementById('timestamp');
+
+        // Update the seek bar and timestamp as the audio plays
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = formatTime(audio.currentTime);
+            const duration = formatTime(audio.duration || 0);
+            timestamp.textContent = `${currentTime} / ${duration}`;
+
+            // Update the seek bar value
+            if (!seekBar.dragging) {
+                seekBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+            }
+        });
+
+
+         // Update the audio duration when metadata is loaded
+         audio.addEventListener('loadedmetadata', function () {
+            const duration = formatTime(audio.duration || 0);
+            timestamp.textContent = `0:00 / ${duration}`;
+            seekBar.max = 100; // Ensure the range slider max is 100
+        });
+
+        // Seek to the new position when the range slider is changed
+        seekBar.addEventListener('input', function () {
+            const seekTo = (seekBar.value / 100) * audio.duration;
+            audio.currentTime = seekTo;
+        });
+
+        // Detect dragging to avoid conflicting with timeupdate events
+        seekBar.addEventListener('mousedown', function () {
+            seekBar.dragging = true;
+        });
+        seekBar.addEventListener('mouseup', function () {
+            seekBar.dragging = false;
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
