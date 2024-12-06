@@ -4,8 +4,8 @@
         margin-left: auto;
         margin-right: auto;
         width: 80%;
-        margin-top: 10%;
-        height: 50vh;
+        margin-top: 20%;
+        height: 40vh;
     }
 
     audio{
@@ -35,4 +35,24 @@
     .bi-pause-fill{
         font-size: 2rem;
     }
+
+    #div_seekbar {
+        display: flex; /* Use flexbox to align items */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically (optional) */
+        margin: auto; /* Ensure it's centered relative to parent */
+        width: 100%; /* Optional: Adjust based on the parent width */
+    }
+    
+    #seek-bar {
+        width: 60%;
+        display: inline;
+    }
+    
+    #timestamp {
+        text-align: center;
+        display: inline;
+        margin-left: 10px; /* Add spacing between elements */
+    }
+    
 }
