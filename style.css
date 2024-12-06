@@ -5,7 +5,7 @@
         margin-right: auto;
         width: 80%;
         margin-top: 20%;
-        height: 40vh;
+        height: 30vh;
     }
 
     audio{
@@ -29,30 +29,31 @@
     }
 
     .bi-caret-right-fill{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .bi-pause-fill{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
-    #div_seekbar {
-        display: flex; /* Use flexbox to align items */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically (optional) */
-        margin: auto; /* Ensure it's centered relative to parent */
-        width: 100%; /* Optional: Adjust based on the parent width */
-    }
+    /* #div_seekbar {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        margin: auto; 
+        width: 100%; 
+    } */
     
     #seek-bar {
-        width: 60%;
-        display: inline;
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     #timestamp {
         text-align: center;
-        display: inline;
-        margin-left: 10px; /* Add spacing between elements */
+        opacity: 0.5;
     }
     
 }
