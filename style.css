@@ -5,7 +5,7 @@
         margin-right: auto;
         width: 80%;
         margin-top: 20%;
-        height: 30vh;
+        height: 35vh;
     }
 
     audio{
@@ -20,12 +20,14 @@
     }
 
     .icon-container {
-        display: flex;         /* Enables flexbox layout */
-        justify-content: center; /* Centers horizontally */
-        
-        /* Centers vertically */
-        /* align-items: center; */
+        display: flex;      
+        justify-content: center;
         width: 100%;
+        gap: 5%;
+    }
+    
+    .bi-skip-backward-fill{
+        font-size: 2.5rem;
     }
 
     .bi-caret-right-fill{
@@ -33,6 +35,10 @@
     }
 
     .bi-pause-fill{
+        font-size: 2.5rem;
+    }
+
+    .bi-skip-forward-fill{
         font-size: 2.5rem;
     }
 
