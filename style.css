@@ -1,0 +1,73 @@
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-top: 15%;
+        margin-bottom: 5%;
+        height: 35vh;
+    }
+
+    audio{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .icon-container {
+        display: flex;      
+        justify-content: center;
+        width: 100%;
+        gap: 5%;
+    }
+
+    .bi-arrow-left{
+        font-size: 2.5rem;
+        margin-left: 10%;
+        position: relative;
+        top: 20px;
+    }
+    
+    .bi-skip-backward-fill{
+        font-size: 2.5rem;
+    }
+
+    .bi-caret-right-fill{
+        font-size: 2.5rem;
+    }
+
+    .bi-pause-fill{
+        font-size: 2.5rem;
+    }
+
+    .bi-skip-forward-fill{
+        font-size: 2.5rem;
+    }
+
+    /* #div_seekbar {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        margin: auto; 
+        width: 100%; 
+    } */
+    
+    #seek-bar {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #timestamp {
+        text-align: center;
+        opacity: 0.5;
+    }
+    
+}
