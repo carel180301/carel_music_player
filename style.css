@@ -6,7 +6,7 @@
         width: 80%;
         margin-top: 15%;
         margin-bottom: 5%;
-        height: 35vh;
+        height: 30vh;
     }
 
     audio{
@@ -37,11 +37,14 @@
 
     .bi-arrow-repeat{
         font-size: 2rem;
+        margin-right: 5%;
     }
 
     .bi-arrow-repeat.active{
         font-size: 2rem;
-        color: #869FDE;
+        color: #953D60;
+        margin-right: 5%;
+        opacity: 0.5;
     }
     
     .bi-skip-backward-fill{
@@ -62,6 +65,7 @@
 
     .bi-shuffle{
         font-size: 2rem;
+        margin-left: 5%;
     }
 
     /* #div_seekbar {
