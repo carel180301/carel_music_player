@@ -61,19 +61,13 @@ function playPreviousSong() {
 }
 
 // function playNextSong() {
-//     currentIndex = (currentIndex + 1) % playlist.length;
-//     updateUI();
+//     if (repeatMode) {
+//         updateUI();
+//     } else {
+//         currentIndex = (currentIndex + 1) % playlist.length;
+//         updateUI();
+//     }
 // }
-
-// Modify playNextSong to check repeat mode
-function playNextSong() {
-    if (repeatMode) {
-        updateUI(); // Replay the current song if repeat mode is active
-    } else {
-        currentIndex = (currentIndex + 1) % playlist.length; // Move to the next song
-        updateUI();
-    }
-}
 
 function playMusic() {
     if (audio.paused) {
@@ -140,6 +134,65 @@ function toggleRepeat() {
     }
 }
 
-
 // Add an event listener to the repeat icon
 document.getElementById('logo_repeat').addEventListener('click', toggleRepeat);
+
+
+let shuffleMode = false; // Track shuffle mode status
+let shuffledIndexes = []; // Array to store shuffled song indexes
+let shuffleIndex = 0; // Pointer for the current position in the shuffled playlist
+
+// Function to generate a shuffled array of song indexes
+function generateShuffledPlaylist() {
+    shuffledIndexes = [...Array(playlist.length).keys()]; // [0, 1, 2, 3]
+    for (let i = shuffledIndexes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // Random index
+        [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]]; // Swap
+    }
+    shuffleIndex = 0; // Reset the shuffle pointer
+}
+
+// Function to toggle shuffle mode
+function toggleShuffle() {
+    const shuffleIcon = document.getElementById('logo_shuffle');
+    shuffleMode = !shuffleMode; // Toggle shuffle mode
+
+    if (shuffleMode) {
+        shuffleIcon.classList.add('active'); // Highlight shuffle icon
+        generateShuffledPlaylist(); // Create a new shuffled playlist
+    } else {
+        shuffleIcon.classList.remove('active'); // Remove highlight
+        shuffledIndexes = []; // Clear the shuffled playlist
+        shuffleIndex = 0; // Reset shuffle index
+    }
+
+    // Enable the "Next" button again when shuffle is turned off
+    document.getElementById('logo_next').disabled = false;
+}
+
+// Modify playNextSong to handle shuffle mode
+function playNextSong() {
+    if (shuffleMode) {
+        if (shuffleIndex < shuffledIndexes.length) {
+            // Play the next song in the shuffled playlist
+            currentIndex = shuffledIndexes[shuffleIndex];
+            shuffleIndex++;
+            updateUI();
+
+            // Disable "Next" button if all shuffled songs have been played
+            if (shuffleIndex >= shuffledIndexes.length) {
+                document.getElementById('logo_next').disabled = true;
+            }
+        }
+    } else if (repeatMode) {
+        updateUI(); // Replay the current song if repeat mode is active
+    } else {
+        currentIndex = (currentIndex + 1) % playlist.length; // Move to the next song
+        updateUI();
+    }
+}
+
+// Add an event listener to the shuffle icon
+document.getElementById('logo_shuffle').addEventListener('click', toggleShuffle);
+
+
