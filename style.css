@@ -68,6 +68,13 @@
         margin-left: 5%;
     }
 
+    .bi-shuffle.active{
+        font-size: 2rem;
+        margin-left: 5%;
+        color: #953D60;
+        opacity: 0.5;
+    }
+
     /* #div_seekbar {
         display: flex; 
         justify-content: center;
