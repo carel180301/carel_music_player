@@ -1,0 +1,111 @@
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-top: 15%;
+        margin-bottom: 5%;
+        height: 30vh;
+    }
+
+    audio{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .icon-container {
+        display: flex;      
+        justify-content: center;
+        width: 100%;
+        gap: 5%;
+    }
+
+
+    .bi-arrow-left{
+        font-size: 2.5rem;
+        margin-left: 10%;
+        position: relative;
+        top: 20px;
+    }
+
+    .bi-arrow-left:hover{
+        font-size: 2.5rem;
+        margin-left: 10%;
+        position: relative;
+        top: 20px;
+        color: #953D60;
+        opacity: 0.5;
+    }
+
+    .bi-arrow-repeat{
+        font-size: 2rem;
+        margin-right: 5%;
+    }
+
+    .bi-arrow-repeat.active{
+        font-size: 2rem;
+        color: #953D60;
+        margin-right: 5%;
+        opacity: 0.5;
+    }
+    
+    .bi-skip-backward-fill{
+        font-size: 2rem;
+    }
+
+    .bi-caret-right-fill{
+        font-size: 2rem;
+    }
+
+    .bi-pause-fill{
+        font-size: 2rem;
+    }
+
+    .bi-skip-forward-fill{
+        font-size: 2rem;
+    }
+
+    .bi-shuffle{
+        font-size: 2rem;
+        margin-left: 5%;
+    }
+
+    .bi-shuffle.active{
+        font-size: 2rem;
+        margin-left: 5%;
+        color: #953D60;
+        opacity: 0.5;
+    }
+
+    /* #div_seekbar {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        margin: auto; 
+        width: 100%; 
+    } */
+    
+    #seek-bar {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #timestamp {
+        text-align: center;
+        opacity: 0.5;
+    }
+    
+}
