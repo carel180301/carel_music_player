@@ -8,7 +8,7 @@ const playlist = [
         audio: 'TXT - MOA Diary.mp3',
         image: 'TXT - MOA Diary.jpg',
         title: 'TXT - MOA Diary'
-    }, 
+    }
 ];
 
 let currentIndex = 0; 
